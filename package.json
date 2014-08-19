@@ -1,6 +1,6 @@
 {
 	"name": "constant-equals",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"author": "Sitegui <sitegui@sitegui.com.br>",
 	"description": "=== in constant time for strings",
 	"main": "./index.js",
