@@ -27,5 +27,13 @@ if (eq(a, b)) {
 }
 ```
 
+`eq()` doesn't do any kind of type conversion, so `eq('12', 12) === false`.
+
+## Arrays
+`eq()` also works for a pair of arrays:
+```javascript
+eq(['a', 'array', 'of', 5, 'tags'], ['a', 'array', 'of', 5, 'tags']) === true
+```
+
 ## NOTE
 You should never, ever, store user passwords in plain text. If you think about doing so, you should problably look for modules like [bcrypt](https://www.npmjs.org/package/bcrypt)

@@ -15,6 +15,24 @@ describe('constantEquals', function () {
 		eq('almost equal strings', 'aimost equal strings').should.be.false
 	})
 
+	it('should apply to arrays', function () {
+		eq(['a', 'array', 'of', 5, 'tags'], ['a', 'array', 'of', 5, 'tags']).should.be.true
+		eq(['a', 'array', 'of', 5, 'tags'], ['a', 'array', 'of', '5', 'tags']).should.be.false
+		eq(['a', 'array', 'of', 5, 'tags'], ['a', 'arrai', 'of', 5, 'tags']).should.be.false
+
+		eq([1, 2, 3], [1, 2]).should.be.false
+
+		eq([[3, 14], [15, 92]], [[3, 14], [15, 92]]).should.be.true
+		eq([[3, 14], [15, 92]], [[3, 15], [14, 92]]).should.be.false
+	})
+
+	it('should behave like === for other types', function () {
+		eq(17, 17).should.be.true
+		eq('17', 17).should.be.false
+		eq({}, {}).should.be.false
+		eq(eq, eq).should.be.true
+	})
+
 	it('should execute in constant time', function () {
 		var n = 1e5,
 			m = 100,
