@@ -35,5 +35,15 @@ if (eq(a, b)) {
 eq(['a', 'array', 'of', 5, 'tags'], ['a', 'array', 'of', 5, 'tags']) === true
 ```
 
+### indexOf  and lastIndexOf
+Like native `indexOf()` and `lastIndexOf()` for arrays:
+```js
+eq.indexOf(['ab', 'cd', 'cd'], 'cd') === 1
+eq.indexOf(['ab', 'cd', 'cd'], 'x') === -1
+eq.lastIndexOf(['ab', 'cd', 'cd'], 'cd') === 2
+```
+
+This will always search all elements in the array, using constant equals for each comparison
+
 ## NOTE
 You should never, ever, store user passwords in plain text. If you think about doing so, you should problably look for modules like [bcrypt](https://www.npmjs.org/package/bcrypt)

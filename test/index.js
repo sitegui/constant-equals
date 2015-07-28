@@ -45,6 +45,12 @@ describe('constantEquals', function () {
 		eq(eq, eq).should.be.true()
 	})
 
+	it('should find index in arrays', function () {
+		eq.indexOf(['ab', 'cd', 'cd'], 'cd').should.be.equal(1)
+		eq.indexOf(['ab', 'cd', 'cd'], 'x').should.be.equal(-1)
+		eq.lastIndexOf(['ab', 'cd', 'cd'], 'cd').should.be.equal(2)
+	})
+
 	it('should execute in constant time', function () {
 		this.timeout(60e3)
 		var n = 1e5,
